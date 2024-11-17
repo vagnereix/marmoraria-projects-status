@@ -71,3 +71,10 @@ body {
     @apply bg-background text-foreground;
   }
 }
+
+@layer utilities {
+  .custom-calendar-picker::-webkit-calendar-picker-indicator {
+    filter: invert(1);
+    float: right;
+  }
+}

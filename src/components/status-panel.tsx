@@ -283,6 +283,7 @@ export function StatusPanelComponent() {
                     <Label htmlFor="clientName" className="text-right">
                       Nome do Cliente
                     </Label>
+
                     <Input
                       id="clientName"
                       value={newProject.clientName}
@@ -295,10 +296,12 @@ export function StatusPanelComponent() {
                       className="col-span-3"
                     />
                   </div>
+
                   <div className="grid grid-cols-4 items-center gap-4">
                     <Label htmlFor="stoneType" className="text-right">
                       Tipo de Pedra
                     </Label>
+
                     <Input
                       id="stoneType"
                       value={newProject.stoneType}
@@ -316,6 +319,7 @@ export function StatusPanelComponent() {
                     <Label htmlFor="startDate" className="text-right">
                       Data de Início
                     </Label>
+
                     <Input
                       id="startDate"
                       type="date"
