@@ -261,10 +261,11 @@ export function StatusPanelComponent() {
         </nav>
 
         <div className="p-4">
-          <div className="flex justify-between items-center mb-4">
+          <div className="flex gap-2 justify-between items-center mb-4">
             <h1 className="text-2xl font-bold">
               Painel de Status da Marmoraria
             </h1>
+
             <Dialog open={isDialogOpen} onOpenChange={setIsDialogOpen}>
               <DialogTrigger asChild>
                 <Button>
@@ -310,6 +311,7 @@ export function StatusPanelComponent() {
                       className="col-span-3"
                     />
                   </div>
+
                   <div className="grid grid-cols-4 items-center gap-4">
                     <Label htmlFor="startDate" className="text-right">
                       Data de Início
@@ -327,6 +329,7 @@ export function StatusPanelComponent() {
                       className="col-span-3"
                     />
                   </div>
+
                   <div className="grid grid-cols-4 items-center gap-4">
                     <Label htmlFor="expectedEndDate" className="text-right">
                       Previsão de Conclusão
@@ -354,10 +357,11 @@ export function StatusPanelComponent() {
           {projects.map((project) => (
             <Card key={project.id} className="mb-4 ">
               <CardHeader>
-                <div className="flex justify-between items-center">
+                <div className="flex gap-4 justify-between items-center">
                   <CardTitle>
                     {project.clientName} - {project.stoneType}
                   </CardTitle>
+
                   <Button
                     variant="secondary"
                     onClick={() => copyProjectLink(project.id)}
@@ -367,8 +371,9 @@ export function StatusPanelComponent() {
                   </Button>
                 </div>
               </CardHeader>
+
               <CardContent>
-                <div className="flex items-center justify-between mb-4">
+                <div className="flex gap-4 items-center justify-between mb-4">
                   <div>
                     <span className="font-semibold">Data de Início: </span>
                     {formatDate(project.startDate)}
@@ -441,8 +446,9 @@ export function StatusPanelComponent() {
                     </div>
                   ))}
                 </div>
-                <div className="mt-4 flex justify-between items-center">
+                <div className="mt-4 flex flex-col gap-2 justify-between sm:gap-0 sm:flex-row sm:items-center">
                   <Badge
+                    className="w-fit"
                     variant={
                       project.steps.every((step) => step.status === "completed")
                         ? "outline"
@@ -453,6 +459,7 @@ export function StatusPanelComponent() {
                       ? "Concluído"
                       : "Em andamento"}
                   </Badge>
+
                   <div className="text-sm text-muted-foreground">
                     <i>
                       <b>{project.lastUpdate.user}</b>{" "}
